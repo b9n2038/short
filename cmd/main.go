@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"fmt"
@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/b9n2038/short/pkg/short/domain/ports/secondary"
-	"github.com/b9n2038/short/pkg/short/domain/service"
-	"github.com/b9n2038/short/pkg/short/infrastructure/cli"
-	"github.com/b9n2038/short/pkg/short/infrastructure/storage"
+	"github.com/b9n2038/short/pkg/domain/ports/secondary"
+	"github.com/b9n2038/short/pkg/domain/service"
+	"github.com/b9n2038/short/pkg/infrastructure/cli"
+	"github.com/b9n2038/short/pkg/infrastructure/storage"
 
 	"github.com/spf13/cobra"
 )
@@ -64,7 +64,7 @@ func getStoragePath() (string, error) {
 	return processPath(path), nil
 }
 
-func main() {
+func Execute() {
 
 	// Get storage path from flags
 	storagePath, err := getStoragePath()
